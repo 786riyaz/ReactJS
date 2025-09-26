@@ -1,0 +1,98 @@
+Vite is a fast development server and build tool
+efficient production build
+simple configuration
+TypeScript Support
+Vite supports features like CSS pre-processores, CSS modules
+
+
+
+
+React + Vite Project Structure Explanation
+=========================================
+
+1. node_modules/
+   - Contains all dependencies (packages) installed using npm.
+   - Managed automatically, do not edit manually.
+   - Example: React, ReactDOM, Vite, etc. are stored here.
+
+2. public/
+   - Stores static assets like images, fonts, and icons.
+   - Files here are copied as-is to the final build.
+   - Example: public/logo.png → http://localhost:5173/logo.png
+
+3. src/
+   - The main working folder for your React app.
+   - Contains components, logic, and styles.
+   - Common files:
+     * App.jsx → Main React component.
+     * main.jsx → Entry point that renders App.
+
+4. .gitignore
+   - Tells Git which files/folders to ignore.
+   - Prevents unnecessary files (like node_modules) from being tracked.
+
+5. eslint.config.js
+   - Configuration for ESLint (a code linting tool).
+   - Ensures clean, error-free, and consistent code.
+
+6. index.html
+   - The main HTML file with a <div id="root"></div>.
+   - React mounts the app inside this div.
+   - Minimal edits are done here (like title, meta tags, etc.).
+
+7. package.json
+   - Blueprint of your project.
+   - Contains:
+     * Project info (name, version).
+     * Dependencies (react, react-dom, vite, etc.).
+     * Scripts (npm run dev, npm run build).
+   - Example snippet:
+     {
+       "name": "my-app",
+       "dependencies": {
+         "react": "^18.2.0",
+         "react-dom": "^18.2.0"
+       },
+       "scripts": {
+         "dev": "vite",
+         "build": "vite build"
+       }
+     }
+
+8. package-lock.json
+   - Auto-generated when installing packages.
+   - Locks exact versions of dependencies.
+   - Ensures consistency across different systems.
+
+9. README.md
+   - Documentation file for your project (Markdown format).
+   - Usually contains setup instructions and project details.
+
+10. vite.config.js
+    - Configuration file for Vite.
+    - Used to add plugins, aliases, or modify build settings.
+    - Example alias:
+      import { defineConfig } from 'vite'
+      import react from '@vitejs/plugin-react'
+
+      export default defineConfig({
+        plugins: [react()],
+        resolve: {
+          alias: {
+            '@': '/src'
+          }
+        }
+      })
+
+Quick Summary
+-------------
+- node_modules/ → All installed packages (auto).
+- public/ → Static files.
+- src/ → Your main React code.
+- .gitignore → Git ignore list.
+- eslint.config.js → ESLint rules.
+- index.html → Root HTML file.
+- package.json → Project info + dependencies + scripts.
+- package-lock.json → Exact dependency versions.
+- README.md → Documentation.
+- vite.config.js → Vite settings.
